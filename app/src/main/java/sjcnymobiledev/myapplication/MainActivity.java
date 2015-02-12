@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+
+
 public class MainActivity extends ActionBarActivity {
 
     //This is the class where you should set your event handlers for your click events
@@ -20,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
 
         //this is where I told the button what to do
         final Button button = (Button) findViewById(R.id.button1);
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
@@ -35,7 +38,30 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
+        //this is where I told the button what to do
+        final Button keith = (Button) findViewById(R.id.keith1);
+
+        keith.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Success")
+                        .setMessage("This is Keith's button!")
+                        .setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            }
+        });
+
+
     }
+
+
+
 
 
     @Override
